@@ -5,7 +5,8 @@ function ItemInfo() {
   return (
     <>
     <div>{state.title}</div>
-    <div className="description">{state.description}</div>
+    <div>{state.description}</div>
+    <div>{state.price}</div>
     </>
   )
 }
