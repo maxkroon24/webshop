@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap');
+body {
+    margin: 0;
+    width: 100vw;
+    box-sizing:border-box;
+    resize: none; 
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
+    scroll-behavior: smooth;
+    --bg-color: white;
+    --sub-color: #d00000;
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+}
+.home-section {
+    width: 100vw;
+    height: 100vh;
+}
+.nav {
+    position: absolute;
+    background-color: black;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    height: 7rem;
+    display: flex;
+    z-index: 4;
+}
+.logo {
+    font-family: 'Josefin Sans';
+    font-weight: 900;
+    font-size: 3rem;
+    position: absolute;
+    color: white;
+    left: 2rem;
+    cursor: pointer;
+}
+.logo::after {
+    color: var(--sub-color);
+    content: 'Cases';
+    margin-left: 1rem;
+    font-family: 'Josefin Sans';
+    font-weight: 900;
+}
+.swiper {
+    width: 600px;
+    height: 300px;
+}
+.swiper-slide {
+    width: 100%;
+    height: 100%;
+}
+.slider-image{
+    filter:brightness(50%);
+    width: 105vw;
+    height: 100vh;
+    object-fit: cover;
+}
+.text-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.text-wrapper-2 {
+    left: 0;
+    top: 0;
+}
+.title {
+    line-height: 0;
+    position: relative;
+    font-size: 6rem;
+    font-family: 'Montserrat';
+    font-weight: 900;
+    color: white;
+    z-index: 4;
+}
+.title-4 {
+    font-size: 4rem;
+}
+.title-after::after {
+    margin-left: 1rem;
+    content: 'Cases';
+    line-height: 0;
+    position: relative;
+    font-size: 6rem;
+    font-family: 'Montserrat';
+    font-weight: 900;
+    color: var(--sub-color);
+    z-index: 4;
+}
+.sub-title {
+    margin-top: -0.5rem;
+    position: relative;
+    font-size: 2rem;
+    font-family: 'Montserrat';
+    font-weight: 900;
+    color: white;
+    z-index: 4;
+}
+.action-button {
+    position: relative;
+    margin-top: 4rem;
+    outline: none;
+    font-family: 'Montserrat';
+    border: none;
+    color: black;
+    border-radius: 7px;
+    padding: 0.8rem 3rem;
+    font-size: 2rem;
+    font-weight: 900;
+    background-color: white;
+    background:linear-gradient(to left, rgb(255, 255, 255) 50%, var(--sub-color) 50%) right;
+    background-size: 300% 100%;
+    background-position: right bottom;
+    transition: 1s ease-out;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+}
+.action-button:hover {
+    background-color: white;
+    background-position: left bottom;
+    color: white;
+}
+.links {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    right: 0;
+    width: 50vw;
+    height: 6rem;
+}
+.link {
+    list-style-type: none;
+    margin-right: 5vw;
+    font-weight: 700;
+    font-family: 'Josefin Sans';
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+li {
+    list-style-type: none;
+}
+ .a:hover {
+    color: var(--sub-color);
+    transition: .2s ease-out;
+}
+ .a{
+    text-decoration: none;
+    transition: .5s ease-out;
+    color: white;
+}
+.a1{
+    text-decoration: none;
+    transition: .5s ease-out;
+    color: white;
+}
+.newspaper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    font-family: 'Josefin Sans';
+    outline: none;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 4rem;
+    border: none;
+    outline: 1px solid white;
+    color: white;
+    padding: 1rem 13rem;
+    background-color: transparent;
+}
+.newspaper::placeholder {
+    margin-top: 1rem;
+    color: white;
+    font-weight: 700;
+}
+.newspaper:focus {
+    outline: 1px solid var(--sub-color);
+}
+.submit-email {
+    cursor: pointer;
+    font-size: 2.3rem;
+    margin-top: 9.3rem;
+    position: absolute;
+    right: 34%;
+    text-align: right;
+    color: var(--sub-color);
+}
+.products-wrapper {
+    width: 100vw;
+    height:fit-content;
+    overflow: hidden;
+    position: absolute;
+    top: 20%;
+    display: grid;
+    gap: 2rem;
+    place-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+}
+.product {
+    margin: 2rem;
+    box-shadow: 0 0 4px 2px rgb(0, 0, 0, 0.2);
+    transition: scale 400ms ease-in;
+    cursor: pointer;
+}
+.product:hover {
+    transition: scale 400ms ease-in;
+    scale: 1.03;
+}
+.product-title {
+    font-family: 'Josefin Sans';
+    font-weight: 600;
+    color: var(--sub-color);
+    font-size: 1.3rem;
+}
+.product-info {
+    display: flex;
+    width: 100%;
+    margin-top: -0.2rem;
+    align-items: center;
+    position: relative;
+    justify-content: space-around;
+    height: 5rem;
+    flex-direction: row;
+}
+.price {
+    font-family: 'Josefin Sans';
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: black;
+}
+.product-image {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
