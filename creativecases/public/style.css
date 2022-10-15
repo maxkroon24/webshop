@@ -245,3 +245,36 @@ li {
     height: 80%;
     object-fit: cover;
 }
+.contact-wrapper {
+    width: 100vw;
+    height: calc(100vh - 7rem);
+    position: absolute;
+    top: 7rem;
+    display: grid;
+    place-items: center;
+}
+.explain-wrapper {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    top: 2rem;
+    width: 100vw;
+    height: 10rem;
+    font-family: 'Montserrat';
+}
+.contact-title {
+    margin-top: 4rem;
+    line-height: 0;
+    position: relative;
+    font-family: 'Montserrat';
+    font-size: 4rem;
+    font-weight: 900;
+}
+.explain-contact {
+    position: relative;
+    font-family: 'Montserrat';
+    font-size: 1.5rem;
+    font-weight: 500;
+}
