@@ -81,6 +81,7 @@ body {
     z-index: 4;
 }
 .title-4 {
+    margin-top: -3rem;
     font-size: 4rem;
 }
 .title-after::after {
@@ -158,13 +159,23 @@ li {
     transition: .5s ease-out;
     color: white;
 }
+.a2 {
+    text-decoration: none;
+    transition: .5s ease-out;
+    color: var(--sub-color);
+}
+.a2:hover {
+    color: white;
+}
 .a1{
     text-decoration: none;
     transition: .5s ease-out;
     color: white;
+    cursor: pointer;
 }
 .newspaper {
     display: flex;
+    position: relative;
     align-items: flex-start;
     justify-content: center;
     flex-direction: row;
@@ -172,12 +183,21 @@ li {
     outline: none;
     font-size: 1.5rem;
     text-align: center;
-    margin-top: 4rem;
     border: none;
+    width: 100%;
+    height: 100%;
     outline: 1px solid white;
     color: white;
-    padding: 1rem 13rem;
     background-color: transparent;
+}
+.newspaper-wrapper {
+    margin-top: 3rem;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 50vw;
+    height: 3rem;
+    position: absolute;
 }
 .newspaper::placeholder {
     margin-top: 1rem;
@@ -189,11 +209,11 @@ li {
 }
 .submit-email {
     cursor: pointer;
-    font-size: 2.3rem;
-    margin-top: 9.3rem;
     position: absolute;
-    right: 34%;
-    text-align: right;
+    font-size: 2.3rem;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     color: var(--sub-color);
 }
 .products-wrapper {
@@ -407,14 +427,14 @@ li {
         margin: 0;
         font-size: 1.5rem;
       }
-      .links li .a {
+      .links li .a, .links li .a2 {
         color: black;
         width: 100%;
         padding: 1.5rem 0;
         display: inline-block;
         border-bottom: 1px solid black;
       }
-      .links li .a:hover {
+      .links li .a:hover, .links li .a2 {
         color: var(--sub-color);
         border-color: var(--sub-color);
       }
@@ -422,4 +442,95 @@ li {
     .links.expanded  {
         display: flex;
       }
+}
+
+@media (max-width: 951px) {
+    .title-3 {
+        font-size: 4rem;
+    }
+    .action-3 {
+        scale: 0.85;
+    }
+    .title-4 {
+        font-size: 3rem
+    }
+}
+@media (max-width: 760px) {
+    .title-1 {
+        font-size: 4rem;
+    }
+    .title-1:after {
+        font-size: 4rem;
+    }
+    .sub-title {
+        font-size: 1.7rem;
+    }
+    .action-1 {
+        scale: 0.85;
+    }
+    .title-2 {
+        font-size: 4rem;
+    }
+    .action-2 {
+        scale: 0.85;
+    }
+}
+@media (max-width: 692px) {
+    .title-3 {
+        font-size: 3rem;
+    }
+    .action-3 {
+        scale: 0.70;
+    }
+    .title-4 {
+        font-size: 2rem
+    }
+    .newspaper-wrapper {
+        height: 2.5rem;
+        width: 70vw;
+    }
+}
+@media (max-width: 620px) {
+    .title-1 {
+        font-size: 3rem;
+    }
+    .title-1:after {
+        font-size: 3rem;
+    }
+    .sub-title {
+        font-size: 1.4rem;
+    }
+    .action-1 {
+        scale: 0.7;
+    }
+    .title-2 {
+        font-size: 3rem;
+    }
+    .action-2 {
+        scale: 0.7;
+    }
+}
+@media (max-width: 478px) {
+    .logo, .logo::after {
+        font-size: 2.4rem;
+    }
+    .title-3 {
+        font-size: 2.3rem;
+    }
+    .action-3 {
+        scale: 0.55;
+    }
+    .title-4 {
+        font-size: 1.6rem
+    }
+    .newspaper-wrapper {
+        height: 2rem;
+        width: 80vw;
+    }
+    .newspaper{
+        font-size: 1rem;
+    }
+    .submit-email {
+        font-size: 1.6rem
+    }
 }

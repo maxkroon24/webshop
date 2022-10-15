@@ -25,8 +25,8 @@ const Layout = () => {
           <li className="link"><Link to="/about" className="a">Why creative cases?</Link></li>
           <li className="link"><Link to="/products" className="a">Products</Link></li>
           <li className="link"><Link to="/contact" className="a">Contact</Link></li>
-          <li className="link"><Link to="/" className="a">Sign up</Link></li>
-          <li className="link"><Link to="contact" className="a">Log in</Link></li>
+          <li className="link"><Link to="/" className="a2">Sign up</Link></li>
+          <li className="link"><Link to="/" className="a2">Log in</Link></li>
         </ul>
       </nav>
 

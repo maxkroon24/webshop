@@ -34,31 +34,33 @@ function Home() {
       <SwiperSlide style={{display: 'flex', alignItems: 'center', justifyContent: 'center',}} className="swiper-slide">
         <img src={image1} alt="" className="slider-image" />
         <div className="text-wrapper">
-        <h1 className="title title-after">Creative</h1>
+        <h1 className="title title-after title-1">Creative</h1>
         <h1 className="sub-title">Color up your life</h1>
-        <Link to="/products" className="action-button">Shop now</Link>
+        <Link to="/products" className="action-button action-1">Shop now</Link>
         </div>
       </SwiperSlide>
       <SwiperSlide>
       <img src={image2} alt="" className="slider-image" />
       <div className="text-wrapper text-wrapper-2">
         <h1 className="title title-2">Airpods cases</h1>
-        <Link to="/products" className="action-button">More Info</Link>
+        <Link to="/products" className="action-button action-2">More Info</Link>
         </div>
       </SwiperSlide>
       <SwiperSlide>
       <img src={image3} alt="" className="slider-image" />
       <div className="text-wrapper text-wrapper-2">
         <h1 className="title title-3">Having problems?</h1>
-        <Link to="/contact" className="action-button">Contact Us</Link>
+        <Link to="/contact" className="action-button action-3">Contact Us</Link>
         </div>
       </SwiperSlide>
       <SwiperSlide>
       <img src={image4} alt="" className="slider-image" />
       <div className="text-wrapper text-wrapper-2">
         <h1 className="title title-4">Sign up for our newspaper</h1>
-        <input type="text" name="email" id="email" placeholder='e-mail...' className='newspaper'></input>
+        <div className="newspaper-wrapper">
         <AiOutlineArrowRight className='submit-email'/>
+        <input type="text" name="email" id="email" placeholder='e-mail...' className='newspaper'></input>
+        </div>
         </div>
       </SwiperSlide>
     </Swiper>
