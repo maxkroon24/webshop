@@ -214,6 +214,7 @@ li {
     font-size: 2.3rem;
     right: 0;
     top: 50%;
+    z-index: 5;
     transform: translateY(-50%);
     color: var(--sub-color);
 }
