@@ -510,6 +510,11 @@ li {
         scale: 0.7;
     }
 }
+@media (max-width: 520px) {
+    .links li {
+        font-size: 1rem;
+    }
+}
 @media (max-width: 478px) {
     .logo, .logo::after {
         font-size: 2.4rem;
