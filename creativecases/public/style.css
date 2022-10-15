@@ -132,10 +132,10 @@ body {
     position: absolute;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-end;
     flex-direction: row;
     right: 0;
-    width: 50vw;
+    width: 100vw;
     height: 6rem;
 }
 .link {
@@ -278,4 +278,148 @@ li {
     font-family: 'Montserrat';
     font-size: 1.5rem;
     font-weight: 500;
+}
+.contact-form {
+    margin-top: 7rem;
+    width:40vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Josefin Sans';
+}
+.form-name {
+    font-size: 1rem;
+    width: 100%;
+    height: 3rem;
+    border: none;
+    outline: none;
+    padding-left: 1rem;
+    font-family: 'Josefin Sans';
+    border-radius: 5px;
+    border: 2px solid black;
+}
+.form-email {
+    font-size: 1rem;
+    width: 100%;
+    padding-left: 1rem;
+    height: 3rem;
+    margin-top: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-family: 'Josefin Sans';
+    border: 2px solid black;
+}
+.form-message {
+    font-size: 1rem;
+    width: 100%;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    height: 13rem;
+    margin-top: 1rem;
+    border: none;
+    outline: none;
+    font-family: 'Josefin Sans';
+    border-radius: 5px;
+    border: 2px solid black;
+}
+.form-message::placeholder, .form-email::placeholder, .form-name::placeholder {
+    font-size: 1rem;
+    font-family: 'Josefin Sans';
+}
+.form-message:focus, .form-email:focus, .form-name:focus {
+    border-color: var(--sub-color);
+}
+.submit-button {
+        position: relative;
+        margin-top: 1rem;
+        outline: none;
+        font-family: 'Montserrat';
+        border: none;
+        color: white;
+        border-radius: 7px;
+        width: 103%;
+        height: 3rem;
+        font-size: 2rem;
+        font-weight: 900;
+        background-color: black;
+        background:linear-gradient(to left, rgb(0 0 0) 50%, var(--sub-color) 50%) right;
+        background-size: 300% 100%;
+        background-position: right bottom;
+        transition: 1s ease-out;
+        cursor: pointer;
+        text-decoration: none;
+        display: block;
+    
+}
+.submit-button:hover {
+        background-color: white;
+        background-position: left bottom;
+        color: white;
+    }
+ .hamburger {
+        border: 0;
+        height: 40px;
+        width: 40px;
+        padding: 0.5rem;
+        border-radius: 50%;
+        background-color: var(--sub-color);
+        cursor: pointer;
+        position: absolute;
+        top: 45%;
+        right: 25px;
+        transform: translateY(-50%);
+        display: none;
+      }
+
+@media (max-width: 1310px) {
+    .link {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 1158px) {
+    .link {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 1055px) {
+        
+    .hamburger {
+        display: block;
+        z-index: 5;
+    }
+    ul.links {
+        display: none;
+        position: absolute;
+        top: -1rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width:50vw;
+        transition: right 1s ease-in;
+        height: 100vh;
+        background-color: white;
+        
+      }
+      .links li {
+        text-align: center;
+        margin: 0;
+        font-size: 1.5rem;
+      }
+      .links li .a {
+        color: black;
+        width: 100%;
+        padding: 1.5rem 0;
+        display: inline-block;
+        border-bottom: 1px solid black;
+      }
+      .links li .a:hover {
+        color: var(--sub-color);
+        border-color: var(--sub-color);
+      }
+      
+    .links.expanded  {
+        display: flex;
+      }
 }

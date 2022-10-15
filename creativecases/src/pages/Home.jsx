@@ -23,10 +23,9 @@ function Home() {
     <div className="home-section">
        <Swiper
       // install Swiper modules
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      modules={[Pagination, Scrollbar, A11y]}
       spaceBetween={0}
       slidesPerView={1}
-      navigation
       pagination={{ clickable: true, color: '#008000' }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
@@ -43,14 +42,14 @@ function Home() {
       <SwiperSlide>
       <img src={image2} alt="" className="slider-image" />
       <div className="text-wrapper text-wrapper-2">
-        <h1 className="title">Airpods cases</h1>
+        <h1 className="title title-2">Airpods cases</h1>
         <Link to="/products" className="action-button">More Info</Link>
         </div>
       </SwiperSlide>
       <SwiperSlide>
       <img src={image3} alt="" className="slider-image" />
       <div className="text-wrapper text-wrapper-2">
-        <h1 className="title">Having problems?</h1>
+        <h1 className="title title-3">Having problems?</h1>
         <Link to="/contact" className="action-button">Contact Us</Link>
         </div>
       </SwiperSlide>
