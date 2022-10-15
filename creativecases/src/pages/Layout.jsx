@@ -21,9 +21,9 @@ const Layout = () => {
           />
         </svg>
       </button>
-        <ul className={isNavExpanded ? "links expanded" : "links"}>
-          <li className="link"><Link to="/about" className="a">About</Link></li>
+        <ul className={isNavExpanded ? "links expanded" : "links"}> 
           <li className="link"><Link to="/products" className="a">Products</Link></li>
+          <li className="link"><Link to="/about" className="a">About</Link></li>
           <li className="link"><Link to="/contact" className="a">Contact</Link></li>
           <li className="link"><Link to="/" className="a2">Sign up</Link></li>
           <li className="link"><Link to="/" className="a2">Log in</Link></li>
