@@ -228,7 +228,7 @@ li {
     display: grid;
     gap: 2rem;
     place-items: center;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     grid-template-rows: repeat(8, 1fr);
 }
 .product {
@@ -567,5 +567,11 @@ li {
     }
     .action-2 {
         scale: 0.6;
+    }
+}
+
+@media (max-width: 440px) {
+    .products-wrapper {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
