@@ -282,9 +282,9 @@ li {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    top: 2rem;
+    top: 0;
     width: 100vw;
-    height: 10rem;
+    height: 12rem;
     font-family: 'Montserrat';
 }
 .contact-title {
@@ -299,12 +299,13 @@ li {
     margin-top: -0.3rem;
     position: relative;
     font-family: 'Montserrat';
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 500;
 }
 .contact-form {
-    margin-top: 7rem;
-    width:40vw;
+    position: absolute;
+    bottom: 1rem;
+    width:fit-content;
     height: 50vh;
     display: flex;
     flex-direction: column;
@@ -312,7 +313,7 @@ li {
 }
 .form-name {
     font-size: 1rem;
-    width: 100%;
+    width: 40vw;
     height: 3rem;
     border: none;
     outline: none;
@@ -323,7 +324,7 @@ li {
 }
 .form-email {
     font-size: 1rem;
-    width: 100%;
+    width: 40vw;
     padding-left: 1rem;
     height: 3rem;
     margin-top: 1rem;
@@ -335,7 +336,7 @@ li {
 }
 .form-message {
     font-size: 1rem;
-    width: 100%;
+    width: 40vw;
     padding-left: 1rem;
     padding-top: 1rem;
     height: 13rem;
@@ -345,6 +346,7 @@ li {
     font-family: 'Josefin Sans';
     border-radius: 5px;
     border: 2px solid black;
+    resize: none;
 }
 .form-message::placeholder, .form-email::placeholder, .form-name::placeholder {
     font-size: 1rem;
@@ -361,9 +363,8 @@ li {
         border: none;
         color: white;
         border-radius: 7px;
-        width: 103%;
-        height: 3rem;
-        font-size: 2rem;
+        font-size: 1.9rem;
+        padding: 0.5rem 0;
         font-weight: 900;
         background-color: black;
         background:linear-gradient(to left, rgb(0 0 0) 50%, var(--sub-color) 50%) right;
@@ -372,7 +373,7 @@ li {
         transition: 1s ease-out;
         cursor: pointer;
         text-decoration: none;
-        display: block;
+        display: inline-block;
     
 }
 .submit-button:hover {
@@ -573,5 +574,29 @@ li {
 @media (max-width: 440px) {
     .products-wrapper {
         grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media (max-width: 822px) {
+    .explain-contact {
+        font-size: 1rem;
+    }
+    .contact-title {
+        font-size: 3rem;
+    }
+}
+@media (max-width: 556px) {
+    .explain-contact {
+        font-size: 0.7rem;
+    }
+    .contact-title {
+        font-size: 2.5rem;
+    }
+}
+@media (max-width: 389px) {
+    .explain-contact {
+        font-size: 0.5rem;
+    }
+    .contact-title {
+        font-size: 2.2rem;
     }
 }
