@@ -395,16 +395,152 @@ li {
         transform: translateY(-50%);
         display: none;
       }
+.item-page-wrapper {
+    position: absolute;
+    width: 100vw;
+    top: 7rem;
+    height: calc(100vh - 7rem);
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+.item-img-wrapper {
+    height: 100%;
+    width: 50%;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+.item-img-wrapper img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+}
+.item-info-wrapper {
+    height: 100%;
+    width: 50%;
+    font-family: 'Josefin Sans';
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.item-info-title {
+    font-size: 4rem;
+    margin-right: 1rem;
+    font-weight: 900;
+    line-height: 0;
+    color: black;
+}
+.item-info-options {
+    outline: none;
+    font-family: 'Montserrat';
+    border: none;
+    color: white;
+    border-radius: 7px;
+    font-size: 1.7rem;
+    padding: 0.3rem 2rem;
+    font-weight: 900;
+    background-color: black;
+    background:linear-gradient(to left, var(--sub-color) 50%, rgb(0 0 0) 50%) right;
+    background-size: 300% 100%;
+    background-position: right bottom;
+    transition: 1s ease-out;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+.item-info-options:hover {
+    background-color: white;
+    background-position: left bottom;
+    color: white;
+}
+.item-info-price {
+    margin-top: -3rem;
+    font-size: 2.5rem;
+    color: black;
+}
+.add-to-cart {
+        position: relative;
+        margin-top: 1rem;
+        outline: none;
+        font-family: 'Montserrat';
+        border: none;
+        color: white;
+        border-radius: 7px;
+        font-size: 1.7rem;
+        padding: 0.3rem 2rem;
+        font-weight: 900;
+        background-color: black;
+        background:linear-gradient(to left, var(--sub-color) 50%, rgb(0 0 0) 50%) right;
+        background-size: 300% 100%;
+        background-position: right bottom;
+        transition: 1s ease-out;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+    
 
+}
+.add-to-cart:hover {
+        background-color: white;
+        background-position: left bottom;
+        color: white;
+    }
+.counter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.min-counter {
+    cursor: pointer;
+    font-weight: 900;
+    padding: 0.15rem 2.3rem;
+    padding-bottom: 0.6rem;
+    border: none;
+    color: var(--sub-color);
+    font-size: 2.2rem;
+    outline: none;
+    background-color: transparent;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+.counter-result {
+    margin-top: 0.2rem;
+    font-weight: 900;
+    margin-left: 2.2rem;
+    margin-right: 2.2rem;
+    color: var(--sub-color);
+    font-size: 2.2rem;
+}
+.plus-counter {
+    cursor: pointer;
+    font-weight: 900;
+    padding: 0.3rem 2.2rem;
+    border: none;
+    color: var(--sub-color);
+    font-size: 2.2rem;
+    outline: none;
+    background-color: transparent;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
 @media (max-width: 1310px) {
-    .link {
+    .link, .shopping-cart {
         font-size: 1.2rem;
+        size: 1.2rem;
     }
 }
 
 @media (max-width: 1158px) {
-    .link {
+    .link, .shopping-cart {
         font-size: 1rem;
+        size: 1rem;
     }
 }
 @media (max-width: 1055px) {
@@ -426,10 +562,11 @@ li {
         background-color: white;
         
       }
-      .links li {
+      .links li, .shopping-cart {
         text-align: center;
         margin: 0;
         font-size: 1.5rem;
+        size: 1.5rem;
       }
       .links li .a, .links li .a2 {
         color: black;
@@ -438,7 +575,7 @@ li {
         display: inline-block;
         border-bottom: 1px solid black;
       }
-      .links li .a:hover, .links li .a2 {
+      .links li .a:hover, .links li .a2, .shopping-cart {
         color: var(--sub-color);
         border-color: var(--sub-color);
       }
@@ -515,8 +652,9 @@ li {
     }
 }
 @media (max-width: 520px) {
-    .links li {
+    .links li, .shopping-cart {
         font-size: 1rem;
+        size: 20;
     }
 }
 @media (max-width: 478px) {
