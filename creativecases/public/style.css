@@ -530,6 +530,18 @@ li {
     border-top-right-radius: 7px;
     border-bottom-right-radius: 7px;
 }
+.go-back-button {
+    z-index: 4;
+    border: none;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 5rem;
+    height: 3rem;
+    cursor: pointer;
+    background-color: black;
+    clip-path: polygon(25% 0%, 34% 1%, 33% 100%, 25% 100%, 0 54%);
+}
 @media (max-width: 1310px) {
     .link, .shopping-cart {
         font-size: 1.2rem;

@@ -1,10 +1,16 @@
 import React, {useState} from 'react'
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate,} from "react-router-dom";
 import Layout3 from "../pages/Layout3";
 function ItemInfo() {
     const { state } = useLocation();
     const [counter, setCounter]= useState(1)
+    const navigate = useNavigate() 
+    function goBack(e) {
+      e.preventDefault()
+      navigate(-1)
+    }
     function getCount(result, e) {
+      
       e.preventDefault()
       if(result === "subtract" && counter > 1) {
         setCounter(counter - 1)
@@ -17,6 +23,9 @@ function ItemInfo() {
     <>
     <Layout3 />
     <div className="item-page-wrapper">
+      <div className="back-button-wrapper" >
+      <button className="go-back-button" onClick={(e) => goBack(e)}></button>
+      </div>
       <div className="item-img-wrapper">
         <img src={state.image} alt="" />
       </div>
