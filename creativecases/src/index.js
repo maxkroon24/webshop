@@ -6,8 +6,10 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import ItemInfo from "./pages/ItemInfo";
 import React from "react";
+import CartContextProvider from './CartContext'
 export default function App() {
   return (
+  <CartContextProvider>
     <BrowserRouter>
       <Routes>
           <Route path='/' element={<Home />} />
@@ -17,6 +19,7 @@ export default function App() {
           <Route path="/products/:slug" element={<ItemInfo />} />
       </Routes>
     </BrowserRouter>
+    </CartContextProvider>
   );
 }
 

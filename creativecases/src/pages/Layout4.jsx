@@ -2,7 +2,7 @@ import { Outlet, Link } from "react-router-dom";
 import React, {useState, useContext, useEffect} from 'react'
 import {CartContext} from '../CartContext'
 import CartItem from './CartItem'
-const Layout3 = () => {
+const Layout4 = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false)
   const [isCartExpanded, setIsCartExpanded] = useState(false)
   const { cartItems, setCartItems} = useContext(CartContext)
@@ -15,8 +15,8 @@ const Layout3 = () => {
   }
   return (
     <>
-      <nav className="nav" style={{backgroundColor: 'black'}}>
-        
+      <nav className="nav">
+        <li className="logo"><Link to="/" className="a1">Creative</Link></li>
         <button className="hamburger" onClick={() => {setIsNavExpanded(!isNavExpanded)}}>
         {/* icon from heroicons.com */}
         <svg
@@ -32,30 +32,30 @@ const Layout3 = () => {
           />
         </svg>
       </button>
-      <li className="logo"><Link to="/" className="a1">Creative</Link></li>
-        <ul className={isNavExpanded ? "links expanded" : "links"}>
-          <li className="link"><Link to="/products" className="a" onClick={getNavExpanded}>Products</Link></li>
-          <li className="link"><Link to="/about" className="a" onClick={getNavExpanded}>About</Link></li>
-          <li className="link"><Link to="/contact" className="a" onClick={getNavExpanded}>Contact</Link></li>
-          <li className="link"><a className="a2" onClick={()=>{ getNavExpanded(); setIsCartExpanded(!isCartExpanded);}}>Cart</a></li>
+        <ul className={isNavExpanded ? "links expanded" : "links"}>  
+          <li className="link"><Link to="/about" className="a">About</Link></li>
+          <li className="link"><Link to="/contact" className="a">Contact</Link></li>
+          <li className="link"><Link to="/" className="a2">Sign up</Link></li>
+          <li className="link"><Link to="/" className="a2">Log in</Link></li>
+          <li className="link"><a className="a2" onClick={()=>{ getNavExpanded(); setIsCartExpanded(true);}}>Cart</a></li>
         </ul>
       </nav>
       <div className={isCartExpanded ? 'cart-section-wrapper' : 'cart-section-wrapper-closed'}>
         <div className="cart-grid">
-          <div className="h4-close-wrapper">
-            <h4 className="your-cart-title">Your cart:</h4>
+        <div className="h4-close-wrapper">
+        <h4 className="your-cart-title">Your cart:</h4>
         <h4 className="submit-for-models" onClick={(e) => getIsCartExpanded(e)}> &#x2716;</h4>
         </div>
             {cartItems.map((item, i) => {
                 return (
-                    <CartItem item={item} i={i} />
+                    <CartItem item={item} key={i} />
                 )
                 })}
-        </div>
-    </div>
+                </div>
+                </div>
       <Outlet />
     </>
   )
 };
 
-export default Layout3;
+export default Layout4;

@@ -395,6 +395,22 @@ li {
         transform: translateY(-50%);
         display: none;
       }
+.filter-wrapper {
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 7rem;
+    height: 7rem;
+}
+.input-filter {
+    outline: none;
+    border: 2px solid var(--sub-color);
+    padding: 0.7rem 3rem;
+    font-family: 'Montserrat';
+    border-radius: 3px;
+}
 .item-page-wrapper {
     position: absolute;
     width: 100vw;
@@ -403,6 +419,7 @@ li {
     box-sizing: border-box;
     margin: 0;
     display: flex;
+    overflow: hidden;
     align-items: center;
     justify-content: space-between;
     padding: 0;
@@ -497,6 +514,16 @@ li {
     align-items: center;
     justify-content: center;
 }
+.counter-2 {
+    position: absolute;
+    bottom: -1.5rem;
+    scale: 0.7;
+    left: -3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 .min-counter {
     cursor: pointer;
     font-weight: 900;
@@ -542,17 +569,216 @@ li {
     background-color: black;
     clip-path: polygon(25% 0%, 34% 1%, 33% 100%, 25% 100%, 0 54%);
 }
+.overall-wrapper {
+   position: fixed;
+   z-index: 100;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   overflow: auto;
+   background: white; 
+}
+.popup {
+    display: grid;
+    place-items: center;
+    position: relative;
+    min-height: 100vh;
+    z-index: 0;
+    width: 100%;
+    height: calc(100% - 7rem);
+}
+.submit-for-models {
+    position: absolute;
+    top: -2.2rem;
+    cursor: pointer;
+    right: 0.7rem;
+    z-index: 100;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Josefin Sans';
+    color: var(--sub-color)
+}
+.error-message {
+    bottom: 0;
+    position: absolute;
+}
+.selectable-div-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    place-items: center;
+    position: relative;
+    width: 100%;
+    gap: 0.5rem;
+    padding: 3rem 0;
+    border-radius: 7px;
+    height: 100%;
+}
+
+.select-wrapper {
+    position: relative;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0.5rem;
+    font-family: 'Josefin Sans';
+    padding: 0.5rem 2rem;
+    display: inline-block;
+    outline: 1px solid black;
+}
+.select-wrapper:hover {
+    outline: 2px solid var(--sub-color);
+}
+.selected-wrapper {
+    position: relative;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Josefin Sans';
+    padding: 0.5rem 2rem;
+    display: inline-block;
+    outline: 2px solid var(--sub-color);
+}
+.cart-section-wrapper {
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    background-color: white;
+    box-shadow: -8px 0 12px 2px rgba(0, 0, 0, 0.418);
+    width: 35vw;
+    height: fit-content;
+    min-height: 60vh;
+}
+.cart-section-wrapper-closed {
+    display: none;
+}
+.cart-grid {
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    place-items: center;
+    grid-template-columns: repeat(1, 1fr);
+}
+.cart-item {
+    position: relative;
+    width: 100%;
+    font-family: 'Montserrat';
+    height: 23vh;
+    border-bottom: 1px solid black;
+}
+.cart-item-image {
+    margin: 1rem;
+    left: 0;
+    position: absolute;
+    height: 80%;
+    width: 10rem;
+    object-fit: cover;
+}
+.cart-info-wrapper {
+    width: 60%;
+    position: absolute;
+    margin-top: 1rem;
+    left: 65%;
+    transform: translatex(-50%);
+    height: 80%;
+}
+.cart-item-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+.cart-item-price {
+    position: absolute;
+    bottom: -0.4rem;
+    right: 0;
+    color: var(--sub-color);
+    font-size: 1.3rem;
+}
+.h4-close-wrapper {
+    position: relative; 
+    width: 100%;
+    height: 4rem;
+    display: grid;
+    place-items: center;
+}
+.your-cart-title {
+    position: absolute;
+    font-family: 'Montserrat';
+    font-weight: 900;
+    color: var(--sub-color);
+    font-size: 2rem;
+}
+.delete-button {
+    scale: 0.9;
+}
+@media (max-width: 1730px) {
+    .cart-section-wrapper {
+        width: 50vw;
+    }
+}
+@media (max-width: 1444px) {
+    .item-info-title {
+        font-size: 3rem;
+    }
+    .item-info-price {
+        font-size: 2rem;
+    }
+    .item-info-options {
+        scale: 0.9;
+    }
+    .add-to-cart {
+        scale: 0.9;
+    }
+    .model-result {
+        margin-left: 1rem;
+    }
+    .counter {
+        scale: 0.9;
+    }
+}
 @media (max-width: 1310px) {
     .link, .shopping-cart {
         font-size: 1.2rem;
         size: 1.2rem;
     }
 }
-
+@media (max-width: 1177px) {
+    .cart-section-wrapper {
+        width: 70vw;
+    }
+}
 @media (max-width: 1158px) {
     .link, .shopping-cart {
         font-size: 1rem;
         size: 1rem;
+    }
+}
+@media (max-width: 1100px) {
+    .item-page-wrapper {
+        flex-direction: column;
+        overflow:visible;
+    }
+    .item-img-wrapper {
+        width: 100vw;
+    }
+    .item-info-wrapper {
+        margin-top: 5vw;
+        width: 100%;
+        height: 100%;
+    }
+    .item-info-price {
+        margin-top: 2rem;
+    }
+    .item-info-options {
+        margin-top: 1rem;
+    }
+    .add-to-cart {
+        margin-top: 3rem;
+    }
+    .model-result {
+        margin-left: 1rem;
+    }
+    .counter {
+        margin-top: 1rem;
     }
 }
 @media (max-width: 1055px) {
@@ -608,6 +834,11 @@ li {
         font-size: 3rem
     }
 }
+@media (max-width: 842px) {
+    .cart-section-wrapper {
+        width: 90vw;
+    }
+}
 @media (max-width: 760px) {
     .title-1 {
         font-size: 4rem;
@@ -643,6 +874,41 @@ li {
         width: 70vw;
     }
 }
+@media (max-width: 668px) {
+    .cart-item-title {
+        font-size: 1.3rem;
+    }
+    .cart-item-price {
+        font-size: 1rem;
+    }
+    .counter-2 {
+        scale: 0.5;
+        left: -5rem;
+    }
+    .cart-item-image {
+        scale: 0.9;
+    }
+}
+@media (max-width: 650px) {
+    .item-info-title {
+        font-size: 2.5rem;
+    }
+    .item-info-price {
+        font-size: 1.5rem;
+    }
+    .item-info-options {
+        scale: 0.8;
+    }
+    .add-to-cart {
+        scale: 0.8;
+    }
+    .model-result{
+        margin-left: 2rem;
+    }
+    .counter {
+        scale: 0.8;
+    }
+}
 @media (max-width: 620px) {
     .title-1 {
         font-size: 3rem;
@@ -662,14 +928,76 @@ li {
     .action-2 {
         scale: 0.7;
     }
+    .submit-for-models {
+        scale: 0.7;
+        top: -2.5rem;
+        right: 0.2rem;
+    }
+}
+@media (max-width: 507px) {
+    .select-wrapper, .selected-wrapper {
+        scale: 0.7;
+    } 
+}
+@media (max-width: 561px) {
+    .cart-item-image {
+        left: -0.8rem;
+        scale: 0.8;
+        height: 100%;
+        margin: 0.5rem;
+        top: -0.5rem;
+    }
+    .cart-item-title {
+        font-size: 1.1rem;
+    }
+    .cart-item-price {
+        font-size: 0.8rem;
+    }
+    .counter-2 {
+        scale: 0.4;
+        left: -6rem;
+    }
+    .delete-button {
+        scale: 0.8;
+        right: -0.5rem;
+    }
+    .cart-item-model {
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 550px) {
+    .item-info-title {
+        font-size: 2rem;
+    }
+    .item-info-price {
+        font-size: 1.3rem;
+    }
+    .item-info-options {
+        scale: 0.7;
+    }
+    .add-to-cart {
+        scale: 0.7;
+    }
+    .model-result{
+        margin-left: 3rem;
+    }
+    .counter {
+        scale: 0.7;
+    }
 }
 @media (max-width: 520px) {
     .links li, .shopping-cart {
         font-size: 1rem;
         size: 20;
     }
+    .cart-section-wrapper {
+        width: 100vw;
+    }
 }
 @media (max-width: 478px) {
+    .item-info-title {
+        font-size: 1.5rem;
+    }
     .logo, .logo::after {
         font-size: 2.4rem;
     }
@@ -695,6 +1023,25 @@ li {
     }
     .submit-email {
         font-size: 1.6rem
+    }
+}
+@media (max-width: 455px) {
+    .cart-item-image {
+        left: -1.5rem;
+        top: -1.1rem;
+        scale: 0.7;
+        height: 110%;
+    }
+    .cart-item-title {
+        font-size: 0.95rem;
+    }
+    .cart-item-model {
+        font-size: 0.75rem;
+    }
+}
+@media (max-width: 393px) {
+    .select-wrapper, .selected-wrapper {
+        scale: 0.5;
     }
 }
 @media (max-width: 385px) {
@@ -740,6 +1087,11 @@ li {
     }
     .contact-title {
         font-size: 2.5rem;
+    }
+    .go-back-button {
+        scale: 0.6;
+        top: 0;
+        left: -0.5rem;
     }
 }
 @media (max-width: 389px) {
