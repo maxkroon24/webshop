@@ -577,7 +577,7 @@ li {
    bottom: 0;
    right: 0;
    overflow: auto;
-   background: white; 
+   background-color: white; 
 }
 .popup {
     display: grid;
@@ -700,6 +700,7 @@ li {
     height: 4rem;
     display: grid;
     place-items: center;
+    background-color: white;
 }
 .your-cart-title {
     position: absolute;
