@@ -942,7 +942,7 @@ li {
         scale: 0.7;
     } 
     .input-filter {
-        scale: 0.6;
+        margin-bottom: 3rem;
     }
 }
 @media (max-width: 561px) {
