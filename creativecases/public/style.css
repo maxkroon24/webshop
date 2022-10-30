@@ -941,6 +941,9 @@ li {
     .select-wrapper, .selected-wrapper {
         scale: 0.7;
     } 
+    .input-filter {
+        scale: 0.6;
+    }
 }
 @media (max-width: 561px) {
     .cart-item-image {
