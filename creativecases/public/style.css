@@ -224,7 +224,7 @@ li {
     height:fit-content;
     overflow: hidden;
     position: absolute;
-    top: 20%;
+    top: 12rem;
     display: grid;
     gap: 2rem;
     place-items: center;
@@ -398,13 +398,15 @@ li {
 .filter-wrapper {
     position: absolute;
     width: 100vw;
+    top: 7rem;
+    margin-bottom: 7rem;
     display: flex;
+    height: 7rem;
     align-items: center;
     justify-content: center;
-    top: 7rem;
-    height: 7rem;
 }
 .input-filter {
+    position: relative;
     outline: none;
     border: 2px solid var(--sub-color);
     padding: 0.7rem 3rem;
@@ -941,9 +943,6 @@ li {
     .select-wrapper, .selected-wrapper {
         scale: 0.7;
     } 
-    .input-filter {
-        margin-bottom: 3rem;
-    }
 }
 @media (max-width: 561px) {
     .cart-item-image {
