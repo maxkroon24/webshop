@@ -1,11 +1,13 @@
 import { Outlet, Link } from "react-router-dom";
-import React, {useState, useContext, useEffect} from 'react'
+import React, {useState, useContext, useEffect, useCallback} from 'react'
 import {CartContext} from '../CartContext'
 import CartItem from './CartItem'
 const Layout3 = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false)
   const [isCartExpanded, setIsCartExpanded] = useState(false)
-  const { cartItems, setCartItems} = useContext(CartContext)
+  const { cartItems, setCartItems, subTotal, setSubTotal, setSubTotalRounded, subTotalRounded} = useContext(CartContext) 
+  const subtotal = subTotal.map(item => item.price).reduce((prev, curr) => Number(prev) + Number(curr), 0);
+  setSubTotalRounded(Math.round(subtotal + Number.EPSILON))
   function getNavExpanded() {
     setIsNavExpanded(false)
   }
@@ -41,17 +43,33 @@ const Layout3 = () => {
         </ul>
       </nav>
       <div className={isCartExpanded ? 'cart-section-wrapper' : 'cart-section-wrapper-closed'}>
-        <div className="cart-grid">
-          <div className="h4-close-wrapper">
+        <div className="h4-close-wrapper">
             <h4 className="your-cart-title">Your cart:</h4>
         <h4 className="submit-for-models" onClick={(e) => getIsCartExpanded(e)}> &#x2716;</h4>
         </div>
+        <div className="cart-grid">
+          
             {cartItems.map((item, i) => {
                 return (
                     <CartItem item={item} i={i} />
                 )
                 })}
         </div>
+        {cartItems.length > 0 ? 
+        <>
+        <div className="subtotal-wrapper">
+        <div className="subtotal-text-wrapper">
+          <p>Subtotal:</p>
+        </div>
+        <div className="subtotal-number-wrapper">
+          <p>{subTotalRounded}</p>
+        </div>
+        </div>
+        <div className="payment-section">
+          <button className="checkout-btn">Checkout</button>
+        </div>
+        </>
+      : ''}
     </div>
       <Outlet />
     </>

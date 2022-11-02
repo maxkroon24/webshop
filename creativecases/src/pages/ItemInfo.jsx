@@ -45,7 +45,7 @@ function ItemInfo() {
     }
     }
      function getCartItems(e)  {
-      toast.success(`Added ${state.title} to your cart!`)
+      
       e.preventDefault()
       if(modelResult === '') {
         window.alert('please select a model')
@@ -61,7 +61,7 @@ function ItemInfo() {
       'model': modelResult,
       'count': counter
      }])
-     
+     toast.success(`Added ${state.title} to your cart!`)
       }
       setCounter(1)
       setModelResult('')

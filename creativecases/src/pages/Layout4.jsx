@@ -1,11 +1,13 @@
 import { Outlet, Link } from "react-router-dom";
-import React, {useState, useContext, useEffect} from 'react'
+import React, {useState, useContext, useEffect, useCallback} from 'react'
 import {CartContext} from '../CartContext'
 import CartItem from './CartItem'
 const Layout4 = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false)
   const [isCartExpanded, setIsCartExpanded] = useState(false)
-  const { cartItems, setCartItems} = useContext(CartContext)
+  const { cartItems, setCartItems, subTotal, setSubTotal, setSubTotalRounded, subTotalRounded} = useContext(CartContext) 
+  const subtotal = subTotal.map(item => item.price).reduce((prev, curr) => Number(prev) + Number(curr), 0);
+  setSubTotalRounded(Math.round(subtotal + Number.EPSILON))
   function getNavExpanded() {
     setIsNavExpanded(false)
   }
@@ -15,8 +17,8 @@ const Layout4 = () => {
   }
   return (
     <>
-      <nav className="nav">
-        <li className="logo"><Link to="/" className="a1">Creative</Link></li>
+      <nav className="nav" style={{backgroundColor: 'black'}}>
+        
         <button className="hamburger" onClick={() => {setIsNavExpanded(!isNavExpanded)}}>
         {/* icon from heroicons.com */}
         <svg
@@ -32,27 +34,42 @@ const Layout4 = () => {
           />
         </svg>
       </button>
-        <ul className={isNavExpanded ? "links expanded" : "links"}>  
-          <li className="link"><Link to="/about" className="a">About</Link></li>
-          <li className="link"><Link to="/contact" className="a">Contact</Link></li>
-          <li className="link"><Link to="/" className="a2">Sign up</Link></li>
-          <li className="link"><Link to="/" className="a2">Log in</Link></li>
-          <li className="link"><a className="a2" onClick={()=>{ getNavExpanded(); setIsCartExpanded(true);}}>Cart</a></li>
+      <li className="logo"><Link to="/" className="a1">Creative</Link></li>
+        <ul className={isNavExpanded ? "links expanded" : "links"}>
+          <li className="link"><Link to="/about" className="a" onClick={getNavExpanded}>About</Link></li>
+          <li className="link"><Link to="/contact" className="a" onClick={getNavExpanded}>Contact</Link></li>
+          <li className="link"><a className="a2" onClick={()=>{ getNavExpanded(); setIsCartExpanded(!isCartExpanded);}}>Cart</a></li>
         </ul>
       </nav>
       <div className={isCartExpanded ? 'cart-section-wrapper' : 'cart-section-wrapper-closed'}>
-        <div className="cart-grid">
         <div className="h4-close-wrapper">
-        <h4 className="your-cart-title">Your cart:</h4>
+            <h4 className="your-cart-title">Your cart:</h4>
         <h4 className="submit-for-models" onClick={(e) => getIsCartExpanded(e)}> &#x2716;</h4>
         </div>
+        <div className="cart-grid">
+          
             {cartItems.map((item, i) => {
                 return (
-                    <CartItem item={item} key={i} />
+                    <CartItem item={item} i={i} />
                 )
                 })}
-                </div>
-                </div>
+        </div>
+        {cartItems.length > 0 ? 
+        <>
+        <div className="subtotal-wrapper">
+        <div className="subtotal-text-wrapper">
+          <p>Subtotal:</p>
+        </div>
+        <div className="subtotal-number-wrapper">
+          <p>{subTotalRounded}</p>
+        </div>
+        </div>
+        <div className="payment-section">
+          <button className="checkout-btn">Checkout</button>
+        </div>
+        </>
+      : ''}
+    </div>
       <Outlet />
     </>
   )
