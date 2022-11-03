@@ -25,7 +25,7 @@ function CartItem({item, i}) {
           document.querySelectorAll('.cart-item-price').forEach(element => {
           setSubTotal(subtotal => [...subtotal, {'price':element.textContent}])
         });
-        }, 5000);
+        }, 1000);
         return () => clearInterval(interval);
       }, []);
   return (

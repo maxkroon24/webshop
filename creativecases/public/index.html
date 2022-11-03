@@ -54,6 +54,19 @@ $(document).ready(function(){
     } // End if
   });
 });
+$(document).ready(function(){
+            var UA = navigator.userAgent.toLowerCase();
+            if(UA.indexOf("chrome") >=0 && UA.indexOf("Mobile") < 0 && UA.indexOf("Android") < 0){ 
+                var links = $(document.head).find("link");
+                $.each(links, function(indx, elm){
+                    var href = $(elm).attr("href");
+
+                    if (href.toLowerCase().indexOf("portal") >=0){
+                        $(elm).attr("href", href + "?v=" + Date.now());
+                    }
+                });
+            }
+            })
 </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
